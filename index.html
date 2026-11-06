@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Şehrinde hangi kuşlar var?</title>
+<meta name="description" content="GBIF'teki Türkiye kuş gözlemleriyle: hangi kuş hangi ay geliyor, senin ilinde bu ay hangi türler görülüyor? Göç takvimi ve il il kuş listeleri.">
+<meta property="og:title" content="Şehrinde hangi kuşlar var?">
+<meta property="og:description" content="Türkiye'nin kuş göç takvimi ve il il, ay ay görülen türler. GBIF gözlem kayıtları.">
+<meta property="og:image" content="https://birtohum.github.io/sehrinin-kuslari/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stil.css?v=1">
+</head>
+<body>
+<main>
+  <header class="bas">
+    <p class="ust">GBIF · <span id="kayitSay">…</span> gözlem kaydı · <span id="turSay">…</span> tür</p>
+    <h1>Şehrinde hangi<br><em>kuşlar</em> var?</h1>
+    <p class="giris">Leylekler nisanda gelir, dağ ispinozları kışı burada geçirir. Aşağıdaki takvimde her satır bir kuş, her sütun bir ay; koyu hücre o türün en çok görüldüğü aylar.</p>
+  </header>
+
+  <section class="takvim-kutu">
+    <div id="takvim" class="takvim" aria-label="Türkiye kuş göç takvimi"></div>
+  </section>
+
+  <section class="il-kutu">
+    <div class="secim">
+      <label><span>İl</span><select id="il"></select></label>
+      <div class="aylar" id="aylar" role="radiogroup" aria-label="Ay"></div>
+    </div>
+    <div class="il-ozet" id="ilOzet" aria-live="polite"></div>
+    <div class="iki">
+      <div>
+        <h2 id="listeBaslik">Bu ay en çok görülenler</h2>
+        <ol class="liste" id="liste"></ol>
+      </div>
+      <div>
+        <h2>Bu ayın misafirleri</h2>
+        <p class="alt">Bu ilde kayıtlarının yarısından fazlası bu aya ve komşu iki aya düşen türler.</p>
+        <ol class="liste" id="misafir"></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="harita-kutu">
+    <h2>Hangi ilde kaç tür kaydedildi?</h2>
+    <p class="alt">Gözlem sayısı daha çok gözlemcinin nerede olduğunu gösterir; az kayıtlı illerde liste eksiktir.</p>
+    <svg id="harita" role="img" aria-label="İllere göre kaydedilen kuş türü sayısı"></svg>
+  </section>
+
+  <footer class="dip">
+    <p><b>Veri:</b> GBIF.org, Türkiye kuş (Aves) gözlem kayıtları; çoğu eBird, iNaturalist ve ulusal izleme programlarından. Kayıtlar CC0, CC BY ve CC BY-NC lisanslı veri setlerinden gelir; burada yalnız sayılar kullanıldı. Erişim: Kasım 2026, GBIF Occurrence API. Türkçe adlar GBIF'teki yerel adlardan; Türkçe adı olmayan türler bilimsel adıyla gösterilir.</p>
+    <p><b>Nasıl okunmalı:</b> Bunlar gözlem kayıtları, kuş sayımı değil. Bir türün bir ayda çok kaydı olması hem orada çok bulunduğunu hem de o ay çok gözlemci çıktığını gösterebilir. Takvim her türü kendi içinde ölçekler: yalnız ne zaman geldiğini gösterir, ne kadar olduğunu değil.</p>
+    <p><a href="https://github.com/birtohum/sehrinin-kuslari">Kaynak kodu</a> · <a href="https://birtohum.github.io/">birtohum</a></p>
+  </footer>
+</main>
+<script src="uygulama.js?v=1"></script>
+</body>
+</html>
